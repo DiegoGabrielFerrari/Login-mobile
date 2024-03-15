@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image} from 'react-native';
+
+const PlaceholderImage = require('./src/component/image/usuario.png');
 
 const TelaLogin = () => {
   const [nomeUsuario, setNomeUsuario] = useState('');
@@ -12,7 +14,8 @@ const TelaLogin = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Log In</Text>
+            <Image source={PlaceholderImage} style={styles.image} />
+            <Text style={styles.titulo}>Login</Text>
       <TextInput
         style={styles.input}
         placeholder="Nome de Usuário"
@@ -39,15 +42,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
+    gap:10,
+  },
+  image: {
+    width:'80%',
+    height:100,
+    resizeMode:"contain",
+  
   },
   titulo: {
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: 'bold',
     marginBottom: 20,
   },
   input: {
     width: '80%',
-    height: 40,
+    height: 60,
     borderWidth: 1,
     borderColor: '#cccccc',
     borderRadius: 5,
@@ -56,8 +66,8 @@ const styles = StyleSheet.create({
   },
   botao: {
     backgroundColor: 'orange',
-    width: '80%',
-    height: 40,
+    width: '75%',
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
